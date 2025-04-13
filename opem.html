@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Giulia!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffcce6, #f9ecf9);
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            margin: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #ff66b3;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            color: #666;
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .special-text {
+            font-size: 1.5em;
+            color: #e60073;
+            font-weight: bold;
+            margin: 30px 0;
+        }
+
+        .input-container {
+            margin: 30px 0;
+        }
+
+        input {
+            padding: 12px 20px;
+            border: 2px solid #ff99cc;
+            border-radius: 30px;
+            font-size: 1em;
+            width: 200px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        input:focus {
+            border-color: #ff3399;
+            box-shadow: 0 0 10px rgba(255, 51, 153, 0.5);
+        }
+
+        button {
+            background: linear-gradient(45deg, #ff66b3, #ff3399);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 102, 179, 0.4);
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 102, 179, 0.6);
+        }
+
+        .hidden-message {
+            display: none;
+            margin-top: 30px;
+            animation: fadeIn 2s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .flower {
+            position: absolute;
+            opacity: 0.7;
+            animation: float 10s infinite ease-in-out;
+            z-index: -1;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        .typing-effect {
+            border-right: 3px solid #ff3399;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #ff3399; }
+        }
+
+        .hearts {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff66b3;
+            transform: rotate(45deg);
+            opacity: 0;
+        }
+
+        .hearts:before, .hearts:after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-color: #ff66b3;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .hearts:before {
+            top: -10px;
+            left: 0;
+        }
+
+        .hearts:after {
+            top: 0;
+            left: -10px;
+        }
+
+        .photo-frame {
+            width: 200px;
+            height: 200px;
+            border: 10px solid white;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+            background-color: #f9ecf9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-placeholder {
+            font-size: 1em;
+            color: #ff66b3;
+            text-align: center;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
+        }
+
+        .star {
+            position: absolute;
+            color: gold;
+            font-size: 20px;
+            animation: twinkle 2s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Animated flowers -->
+        <div class="flower" style="top: -50px; left: 50px; font-size: 40px; animation-delay: 0s;">🌸</div>
+        <div class="flower" style="top: 20px; right: 70px; font-size: 50px; animation-delay: 1s;">🌹</div>
+        <div class="flower" style="bottom: 30px; left: 80px; font-size: 45px; animation-delay: 2s;">🌺</div>
+        <div class="flower" style="bottom: -40px; right: 60px; font-size: 35px; animation-delay: 3s;">🌻</div>
+        <div class="flower" style="top: 40%; left: 10%; font-size: 30px; animation-delay: 4s;">💮</div>
+        <div class="flower" style="top: 60%; right: 15%; font-size: 40px; animation-delay: 5s;">🏵️</div>
+
+        <h1>Happy Birthday Giulia! ✨</h1>
+        
+        <div class="photo-frame">
+            <div class="photo-placeholder">
+                Beautiful<br>
+                🌸
+            </div>
+        </div>
+        
+        <p>Dear Giulia, though I've only seen you in pictures, I can feel your radiant energy shining through.</p>
+        
+        <div class="special-text">You're a star that shines with its own light ✨</div>
+        
+        <div class="input-container">
+            <p>Type the magic word to discover a special message:</p>
+            <input type="text" id="magic-word" placeholder="Type here...">
+            <button onclick="checkWord()">Reveal</button>
+        </div>
+        
+        <div id="hidden-message" class="hidden-message">
+            <p id="typing-text" class="typing-effect"></p>
+        </div>
+    </div>
+
+    <script>
+        // Create additional flowers dynamically
+        function createFlowers() {
+            const container = document.querySelector('.container');
+            const flowers = ['🌸', '🌹', '🌺', '🌻', '🌼', '🌷', '💐', '🏵️'];
+            
+            for (let i = 0; i < 10; i++) {
+                const flower = document.createElement('div');
+                flower.className = 'flower';
+                flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+                flower.style.left = Math.random() * 100 + '%';
+                flower.style.top = Math.random() * 100 + '%';
+                flower.style.fontSize = (Math.random() * 20 + 20) + 'px';
+                flower.style.animationDelay = (Math.random() * 5) + 's';
+                flower.style.opacity = Math.random() * 0.5 + 0.3;
+                container.appendChild(flower);
+            }
+        }
+
+        // Create twinkling stars
+        function createStars() {
+            const container = document.querySelector('.container');
+            
+            for (let i = 0; i < 15; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.innerHTML = '★';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.fontSize = (Math.random() * 15 + 10) + 'px';
+                star.style.animationDelay = (Math.random() * 2) + 's';
+                container.appendChild(star);
+            }
+        }
+
+        // Check the magic word
+        function checkWord() {
+            const input = document.getElementById('magic-word');
+            const hiddenMessage = document.getElementById('hidden-message');
+            
+            if (input.value.toLowerCase() === 'beautiful') {
+                hiddenMessage.style.display = 'block';
+                typeWriter();
+                createHearts();
+                createConfetti();
+                createStars();
+            } else {
+                alert('That\'s not the magic word! Try "beautiful"');
+            }
+        }
+
+        // Typewriter effect
+        function typeWriter() {
+            const text = "Giulia, my heart feels you even across the distance. You're not just beautiful - you're a celestial being who brightens my darkest nights. Your smile could outshine the sun, and your eyes hold galaxies I'd love to explore. On your special day, I wish you endless joy, because the world becomes more beautiful when you're happy. Happy birthday to the woman who makes my heart whisper 'wow' every time I see her. 💫💖";
+            const typingText = document.getElementById('typing-text');
+            let i = 0;
+            
+            function typing() {
+                if (i < text.length) {
+                    typingText.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typing, 30);
+                } else {
+                    typingText.classList.remove('typing-effect');
+                }
+            }
+            
+            typingText.innerHTML = '';
+            typingText.classList.add('typing-effect');
+            typing();
+        }
+
+        // Create animated hearts
+        function createHearts() {
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'hearts';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.top = Math.random() * 100 + 'vh';
+                    heart.style.opacity = '0.7';
+                    heart.style.transform = `rotate(45deg) scale(${Math.random() * 0.5 + 0.5})`;
+                    document.body.appendChild(heart);
+                    
+                    // Heart animation
+                    animateHeart(heart);
+                }, i * 200);
+            }
+        }
+
+        function animateHeart(heart) {
+            let pos = 0;
+            let opacity = 0.7;
+            const speed = Math.random() * 2 + 1;
+            const id = setInterval(frame, 20);
+            
+            function frame() {
+                if (pos >= 100) {
+                    clearInterval(id);
+                    heart.remove();
+                } else {
+                    pos++;
+                    opacity -= 0.01;
+                    heart.style.top = (parseFloat(heart.style.top) - 1) + 'vh';
+                    heart.style.opacity = opacity;
+                }
+            }
+        }
+
+        // Create confetti
+        function createConfetti() {
+            const colors = ['#ff66b3', '#ff9999', '#ffcc99', '#ffff99', '#99ff99', '#99ffff', '#9999ff', '#cc99ff'];
+            
+            for (let i = 0; i < 150; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.opacity = '0.8';
+                    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                    document.body.appendChild(confetti);
+                    
+                    // Confetti animation
+                    animateConfetti(confetti);
+                }, i * 30);
+            }
+        }
+
+        function animateConfetti(confetti) {
+            let posY = 0;
+            let posX = parseFloat(confetti.style.left);
+            let rotate = parseInt(confetti.style.transform.match(/rotate\((\d+)deg\)/)[1]);
+            const speedY = Math.random() * 5 + 3;
+            const speedX = (Math.random() - 0.5) * 4;
+            const rotateSpeed = (Math.random() - 0.5) * 20;
+            const size = Math.random() * 10 + 5;
+            
+            confetti.style.width = size + 'px';
+            confetti.style.height = size + 'px';
+            confetti.style.opacity = '0.8';
+            
+            const id = setInterval(frame, 20);
+            
+            function frame() {
+                if (posY >= 100) {
+                    clearInterval(id);
+                    confetti.remove();
+                } else {
+                    posY += speedY / 10;
+                    posX += speedX / 10;
+                    rotate += rotateSpeed;
+                    confetti.style.top = posY + 'vh';
+                    confetti.style.left = posX + 'vw';
+                    confetti.style.transform = `rotate(${rotate}deg)`;
+                    confetti.style.opacity = 0.8 - (posY / 100);
+                }
+            }
+        }
+
+        // Initialize
+        window.onload = function() {
+            createFlowers();
+            createStars();
+            
+            // Allow using Enter to submit
+            document.getElementById('magic-word').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    checkWord();
+                }
+            });
+        };
+    </script>
+</body>
+</html>
